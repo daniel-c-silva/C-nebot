@@ -46,15 +46,15 @@ It holds together **React on the frontend** and a **Flask backend**, then superc
 cd backend
 pip install -r requirements.txt
 
-  *Optional but good for safety
-# Create a .env file in the backend folder with your API keys
-TMDB_API_KEY="your_tmdb_api_key"
-OPENAI_API_KEY="your_openai_api_key"
-  *
-
 # Run the Flask server
 python main.py      # Windows/Linux
 python3 main.py     # macOS
+
+*!Optional but good for safety*
+# Create a .env file in the backend folder with your API keys
+TMDB_API_KEY="your_tmdb_api_key"
+OPENAI_API_KEY="your_openai_api_key"
+
 ```
 ### Frontend Setup
 ```
