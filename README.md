@@ -3,8 +3,6 @@
 C-neBot isn’t just another movie search app — it works as an assistant for you to choose what to watch quicker.  
 Search, explore and chat.
 
-![A GIF of the real-time C-nebot dashboard in action](https://github.com/daniel-c-silva/C-nebot/blob/main/Assets/Intro.gif?raw=true)
-
 ![A GIF of the real-time C-nebot dashboard in action](https://github.com/daniel-c-silva/C-nebot/blob/main/Assets/Visualise.gif?raw=true)
 
 It holds together **React on the frontend** and a **Flask backend**, then supercharges everything with:  
@@ -19,6 +17,8 @@ It holds together **React on the frontend** and a **Flask backend**, then superc
 - **Movie Details** → Synopses, release dates, ratings, posters  
 - **AI Chat** → Ask anything about a movie, get smart responses (recommendations, trivia, vibes)  
 
+
+![A GIF of the real-time C-nebot dashboard in action](https://github.com/daniel-c-silva/C-nebot/blob/main/Assets/Intro.gif?raw=true)
 ---
 
 ## Tech Stack
@@ -64,3 +64,5 @@ npm install
 npm start
 Use It
 Now open http://localhost:3000 and let C-neBot do its thing.
+
+
