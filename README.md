@@ -1,12 +1,12 @@
 # C-neBot: Your AI-Powered Movie Buddy
 
-C-neBot isn’t just another movie search app — it’s your movie sidekick.  
-Search. Explore. Chat. Repeat.  
+C-neBot isn’t just another movie search app — it works as an assistant for you to choose what to watch quicker.  
+Search, explore and chat.
 
-It smashes together **React on the frontend** and a **Flask backend**, then supercharges everything with:  
+It holds together **React on the frontend** and a **Flask backend**, then supercharges everything with:  
 
 - **TMDB API** → movie data on demand  
-- **OpenAI GPT-4o-mini** → AI chat about movies like you’re texting a geeky friend  
+- **OpenAI GPT-4o-mini** → AI chat about movies 
 
 ---
 
