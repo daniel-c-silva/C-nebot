@@ -45,15 +45,11 @@ pip install -r requirements.txt
 Create a .env file in the backend folder with your API keys:
 
 env
-Copiar
-Editar
 TMDB_API_KEY="your_tmdb_api_key"
 OPENAI_API_KEY="your_openai_api_key"
 Run the Flask server:
 
 bash
-Copiar
-Editar
 python main.py      # Windows/Linux
 python3 main.py     # macOS
 Frontend Setup
