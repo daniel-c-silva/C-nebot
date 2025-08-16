@@ -1,5 +1,7 @@
 # C-neBot: Your AI-Powered Movie Buddy
+
 ![A GIF of the real-time C-nebot dashboard in action](https://github.com/daniel-c-silva/C-nebot/blob/main/Assets/Visualise.gif?raw=true)
+
 C-neBot isn’t just another movie search app — it works as an assistant for you to choose what to watch quicker.  
 Search, explore and chat.
 
