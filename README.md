@@ -52,10 +52,9 @@ Run the Flask server:
 bash
 python main.py      # Windows/Linux
 python3 main.py     # macOS
-Frontend Setup
+
+Frontend Setup:
 bash
-Copiar
-Editar
 cd frontend
 npm install
 npm start
