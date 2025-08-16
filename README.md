@@ -59,4 +59,3 @@ python3 main.py     # macOS
 cd frontend
 npm install
 npm start
-
