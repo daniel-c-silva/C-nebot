@@ -41,7 +41,6 @@ It holds together **React on the frontend** and a **Flask backend**, then superc
 - Node.js & npm  
 
 ---
-
 ### Backend Setup
 ```bash
 cd backend
@@ -49,20 +48,24 @@ pip install -r requirements.txt
 Create a .env file in the backend folder with your API keys:
 
 env
+Copiar
+Editar
 TMDB_API_KEY="your_tmdb_api_key"
 OPENAI_API_KEY="your_openai_api_key"
 Run the Flask server:
 
 bash
+Copiar
+Editar
 python main.py      # Windows/Linux
 python3 main.py     # macOS
-
-Frontend Setup:
+Frontend Setup
 bash
+Copiar
+Editar
 cd frontend
 npm install
 npm start
 Use It
 Now open http://localhost:3000 and let C-neBot do its thing.
-
 
