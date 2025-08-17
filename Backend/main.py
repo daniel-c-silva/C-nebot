@@ -1,8 +1,11 @@
+from flask_cors import CORS
 import os # Import necessary modules
 from flask import Flask, request, jsonify  # Import Flask core and helper functions  
 from movie_service import search_movie, get_movie_details  # Import movie logic from separate file
 from gpt_service import chat_about_movie # Import GPT chat logic from separate file
 import openai  # Add OpenAI import for new API
+
+CORS(app)
 
 # ! Step 1: Define the Flask application instance
 app = Flask(__name__)
