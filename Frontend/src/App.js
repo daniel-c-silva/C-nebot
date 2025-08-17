@@ -66,15 +66,6 @@ function App() {
 
       // Convert the JSON response body into a JavaScript object
       
-
-
-      const response = await fetch(url);
-      if (!response.ok) {
-          const text = await response.text();
-          console.error("Backend error:", response.status, text);
-          return;
-      }
-      
       const data = await response.json();
 
 
