@@ -1,20 +1,16 @@
-# Backend/movie_service.py
 
 import os
 import requests  # To make HTTP requests to external APIs (TMDB)
 
-# We will get the TMDB API key inside the functions to ensure it's loaded properly.
+# this is the movie_service.py file that contains the logic for interacting with the TMDB API
+
+# ! Step 1: Store your TMDB API key here (replace with your actual key)
+TMDB_API_KEY = os.getenv("TMDB_API_KEY") # Replace with your actual TMDB API key
 TMDB_BASE_URL = "https://api.themoviedb.org/3" # Base URL for TMDB API
 
 
 # ! Step 1.1: Define a function to search for movies by title
 def search_movie(query):
-    # Get the TMDB API key from environment variables right before use
-    TMDB_API_KEY = os.getenv("TMDB_API_KEY")
-    if not TMDB_API_KEY:
-        print("Error: TMDB_API_KEY not found in environment variables.")
-        return None
-
     # ! Step 2: Build the URL to call the TMDB API with your API key and the search query
     url = f"{TMDB_BASE_URL}/search/movie" # * this is telling the TMDB API that we want to search for movies when we call this endpoint(meaning the URL)
 
@@ -52,15 +48,6 @@ def search_movie(query):
 
 # ! Step 2: Define a function to get movie details by ID
 def get_movie_details(movie_id):
-    """
-    Fetches details for a single movie by its ID.
-    """
-    # Get the TMDB API key from environment variables right before use
-    TMDB_API_KEY = os.getenv("TMDB_API_KEY")
-    if not TMDB_API_KEY:
-        print("Error: TMDB_API_KEY not found in environment variables.")
-        return None
-
     # ! Step 3: Build the URL to call the TMDB API for movie details using the provided movie ID
     url = f"{TMDB_BASE_URL}/movie/{movie_id}" # * this is telling the TMDB API that we want to get details of a specific movie when we call this endpoint using the movie ID
 
@@ -77,5 +64,3 @@ def get_movie_details(movie_id):
 
     # ! Step 3.3: Parse the TMDB JSON response into a Python dictionary and return the movie details
     return response.json() # * this converts the JSON response from the TMDB API into a Python dictionary so we can work with it easily and returns the movie details
-
-   
