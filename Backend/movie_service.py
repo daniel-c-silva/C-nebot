@@ -4,7 +4,7 @@ import requests  # To make HTTP requests to external APIs (TMDB)
 # this is the movie_service.py file that contains the logic for interacting with the TMDB API
 
 # ! Step 1: Store your TMDB API key here (replace with your actual key)
-TMBD_API_KEY = os.getenv("TMDB_API_KEY") # Replace with your actual TMDB API key
+TMDB_API_KEY = os.getenv("TMDB_API_KEY") # Replace with your actual TMDB API key
 TMDB_BASE_URL = "https://api.themoviedb.org/3" # Base URL for TMDB API 
 
 
@@ -14,7 +14,7 @@ def search_movie(query):
     url = f"{TMDB_BASE_URL}/search/movie" # * this is telling the TMDB API that we want to search for movies when we call this endpoint(meaning the URL)
 
     params = { # * this is telling the TMDB API what parameters we want to send with the request, parameters are basically the data we want to send to the API for example, the API key and the search query
-        "api_key": TMBD_API_KEY,  # TMDB API key so the API knows who is making the request
+        "api_key": TMDB_API_KEY,  # TMDB API key so the API knows who is making the request
         "query": query # The search query for the movie title
     }
 
@@ -50,7 +50,7 @@ def get_movie_details(movie_id):
     url = f"{TMDB_BASE_URL}/movie/{movie_id}" # * this is telling the TMDB API that we want to get details of a specific movie when we call this endpoint using the movie ID
 
     params = { # * this is telling the TMDB API what parameters we want to send with the request, parameters are basically the data we want to send to the API for example, the API key
-        "api_key": TMBD_API_KEY # TMDB API key so the API knows who is making the request
+        "api_key": TMDB_API_KEY # TMDB API key so the API knows who is making the request
     }
 
     # ! Step 3.1: Make an HTTP GET request to the TMDB API for movie details
