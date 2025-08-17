@@ -5,10 +5,9 @@ from movie_service import search_movie, get_movie_details  # Import movie logic 
 from gpt_service import chat_about_movie # Import GPT chat logic from separate file
 import openai  # Add OpenAI import for new API
 
-CORS(app)
-
 # ! Step 1: Define the Flask application instance
 app = Flask(__name__)
+CORS(app)
 
 # ! Step 2: Define the root endpoint for the base URL
 @app.route("/")  # When someone visits the base URL, this function will run
