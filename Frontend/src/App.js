@@ -62,7 +62,7 @@ function App() {
   const searchMovies = async () => {
     try {
       // * Build and send a GET request to the backend, including the search query in the URL
-      const response = await fetch('https://your-backend.onrender.com/search_movie');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/search_movie`);
 
       // Convert the JSON response body into a JavaScript object
       const data = await response.json();
@@ -83,7 +83,7 @@ function App() {
   const fetchMovieDetails = async (movieId) => {
     try {
       // * Request movie details from the backend
-      const response = await fetch('https://your-backend.onrender.com/search_movie');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/search_movie`);
 
       const data = await response.json();  // Convert JSON to JS object
 
@@ -111,7 +111,7 @@ function App() {
       }
 
       // * 3. Send POST request to backend with movie ID and user message
-      const response = await fetch(`${BASE_URL}/chat`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
