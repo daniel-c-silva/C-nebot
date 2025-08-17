@@ -142,9 +142,12 @@ function App() {
       // - Else if response exists, show that.
       // - Else if it's a string, show it.
       // - Else fallback to stringified JSON.
-      setChatResponse(
-        data.reply || data.response || (typeof data === "string" ? data : JSON.stringify(data))
-      );
+      const formattedResponse =
+        (data && typeof data === "object") 
+          ? data.reply || data.response || JSON.stringify(data)
+          : String(data);
+
+      setChatResponse(formattedResponse);
 
     } catch (error) {
       // If there’s a network error or unexpected problem, log and show message
