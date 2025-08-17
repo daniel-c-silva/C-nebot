@@ -47,6 +47,10 @@ function App() {
   const [chatMessage, setChatMessage] = useState(""); 
   const [chatResponse, setChatResponse] = useState(""); 
 
+  // ! BASE URL for backend requests
+  // ? In development, this can be localhost, but in Vercel production, it should be the deployed API endpoint
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || ""; // If empty, will call relative paths
+
   // * ================================
   // *                    SECTION: FUNCTIONS (LOGIC)
   // * ================================
@@ -58,7 +62,7 @@ function App() {
   const searchMovies = async () => {
     try {
       // * Build and send a GET request to the backend, including the search query in the URL
-      const response = await fetch(`/search_movie?query=${query}`);
+      const response = await fetch(`${BASE_URL}/search_movie?query=${query}`);
 
       // Convert the JSON response body into a JavaScript object
       const data = await response.json();
@@ -79,7 +83,7 @@ function App() {
   const fetchMovieDetails = async (movieId) => {
     try {
       // * Request movie details from the backend
-      const response = await fetch(`/movie/${movieId}`);
+      const response = await fetch(`${BASE_URL}/movie/${movieId}`);
       const data = await response.json();  // Convert JSON to JS object
 
       // Save this movie’s details into state so we can display them
@@ -106,7 +110,7 @@ function App() {
       }
 
       // * 3. Send POST request to backend with movie ID and user message
-      const response = await fetch(`/chat`, {
+      const response = await fetch(`${BASE_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -142,12 +146,9 @@ function App() {
       // - Else if response exists, show that.
       // - Else if it's a string, show it.
       // - Else fallback to stringified JSON.
-      const formattedResponse =
-        (data && typeof data === "object") 
-          ? data.reply || data.response || JSON.stringify(data)
-          : String(data);
-
-      setChatResponse(formattedResponse);
+      setChatResponse(
+        data.reply || data.response || (typeof data === "string" ? data : JSON.stringify(data))
+      );
 
     } catch (error) {
       // If there’s a network error or unexpected problem, log and show message
