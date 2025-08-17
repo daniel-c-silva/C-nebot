@@ -70,5 +70,7 @@ def chat_route():
         return jsonify({"error": str(e)}), 500
 
 # ! Step FINALE: Run the Flask app in debug mode if this script is executed directly
+
 if __name__ == "__main__":
-   app.run(debug=True)  
+    port = int(os.environ.get("PORT", 5000))  # use Render's assigned port
+    app.run(host="0.0.0.0", port=port, debug=True)
