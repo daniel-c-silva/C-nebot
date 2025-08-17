@@ -33,7 +33,6 @@ function App() {
   // Why: We keep search results in state so that when new results arrive from the server, React updates the UI automatically.
   const [results, setResults] = useState([]); // [] means no results yet
   
-
   // ! Step 3: Create a state variable for the selected movie's detailed information
   // selectedMovie = object containing details about one movie, or null if no movie is selected
   // setSelectedMovie = function to update selectedMovie
@@ -68,29 +67,36 @@ function App() {
       const data = await response.json();
 
       // Update our results state with the movies from the backend
-      setResults(data.results);
+      setResults(data.results || []); // safe fallback to empty array
 
       // Clear any previously selected movie because we’re showing fresh search results now
       setSelectedMovie(null);
     } catch (error) {
       // If anything goes wrong (network error, JSON error), log it for debugging
       console.error("Error fetching movies:", error);
+      setResults([]); // clear old results
     }
   };
 
   // ! Step 2: Function to fetch details for a single movie by ID
   // Why: We call this when the user clicks a movie in the results list so we can display more info.
   const fetchMovieDetails = async (movieId) => {
+    if (!movieId) {
+      console.error("movieId is undefined!");
+      return;
+    }
+
     try {
       // * Request movie details from the backend
-      const response = await fetch(`${BASE_URL}/movie/${movieId}`);;
+      const response = await fetch(`${BASE_URL}/movie/${movieId}`);
 
       const data = await response.json();  // Convert JSON to JS object
 
       // Save this movie’s details into state so we can display them
-      setSelectedMovie(data);
+      setSelectedMovie(data || null);
     } catch (error) {
       console.error("Error fetching movie details:", error);
+      setSelectedMovie(null);
     }
   };
 
@@ -105,7 +111,7 @@ function App() {
       }
 
       // 2. Stop if no movie is selected
-      if (!selectedMovie || !selectedMovie.id) {
+      if (!selectedMovie?.id) {
         console.error("No movie selected. Please select a movie before chatting.");
         return;
       }
