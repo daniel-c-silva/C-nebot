@@ -3,7 +3,7 @@ from openai import OpenAI # Import OpenAI library for GPT-3.5 interaction
 from movie_service import get_movie_details, search_movie # Import movie service functions
 
 # API key to access OpenAI 
-API_KEY = "YOUR OWN OPEN AI API KEY"
+API_KEY = os.getenv("OPENAI_API_KEY") # put your own api key
 
 # Creates the OpenAI client using the key
 client = OpenAI(api_key=API_KEY)# * set API key for OpenAI library
