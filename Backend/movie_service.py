@@ -4,7 +4,7 @@ import requests  # To make HTTP requests to external APIs (TMDB)
 # this is the movie_service.py file that contains the logic for interacting with the TMDB API
 
 # ! Step 1: Store your TMDB API key here (replace with your actual key)
-TMBD_API_KEY = "YOUR OWN TMDB API KEY" # Replace with your actual TMDB API key
+TMBD_API_KEY = os.getenv("TMDB_API_KEY") # Replace with your actual TMDB API key
 TMDB_BASE_URL = "https://api.themoviedb.org/3" # Base URL for TMDB API 
 
 
