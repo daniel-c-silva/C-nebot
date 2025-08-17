@@ -83,7 +83,7 @@ function App() {
   const fetchMovieDetails = async (movieId) => {
     try {
       // * Request movie details from the backend
-      const response = await fetch(`${BASE_URL}/search_movie?query=${encodeURIComponent(query)}`);
+      const response = await const response = await fetch(`${BASE_URL}/movie/${movieId}`);
 
       const data = await response.json();  // Convert JSON to JS object
 
