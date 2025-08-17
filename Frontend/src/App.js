@@ -65,7 +65,18 @@ function App() {
       const response = await fetch(`${BASE_URL}/search_movie?query=${encodeURIComponent(query)}`);
 
       // Convert the JSON response body into a JavaScript object
+      
+
+
+      const response = await fetch(url);
+      if (!response.ok) {
+          const text = await response.text();
+          console.error("Backend error:", response.status, text);
+          return;
+      }
+      
       const data = await response.json();
+
 
       // Update our results state with the movies from the backend
       setResults(data.results || []); // safe fallback to empty array
