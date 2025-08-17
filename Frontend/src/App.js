@@ -61,23 +61,23 @@ function App() {
   // * FETCH API CALL WORKS AS URL COMMUNICATION INSTEAD OF SAME RUNTIME IMPORTS
   const searchMovies = async () => {
     try {
-      // * Build and send a GET request to the backend, including the search query in the URL
+    // * Build and send a GET request to the backend, including the search query in the URL
       const response = await fetch(`${BASE_URL}/search_movie?query=${encodeURIComponent(query)}`);
 
-      // Convert the JSON response body into a JavaScript object
-      
+    // Convert the JSON response body into a JavaScript object
       const data = await response.json();
 
-
-      // Update our results state with the movies from the backend
+    // Update our results state with the movies from the backend
       setResults(data.results || []); // safe fallback to empty array
 
-      // Clear any previously selected movie because we’re showing fresh search results now
+    // Clear any previously selected movie because we’re showing fresh search results now
       setSelectedMovie(null);
     } catch (error) {
-      // If anything goes wrong (network error, JSON error), log it for debugging
+    // If anything goes wrong (network error, JSON error), log it for debugging
       console.error("Error fetching movies:", error);
-      setResults([]); // clear old results
+    
+    // Clear old results in case of error
+      setResults([]); 
     }
   };
 
