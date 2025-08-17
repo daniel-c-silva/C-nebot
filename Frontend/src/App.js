@@ -62,7 +62,7 @@ function App() {
   const searchMovies = async () => {
     try {
       // * Build and send a GET request to the backend, including the search query in the URL
-      const response = await fetch(`${BASE_URL}/search_movie`);
+      const response = await fetch(`${BASE_URL}/search_movie?query=${encodeURIComponent(query)}`);
 
       // Convert the JSON response body into a JavaScript object
       const data = await response.json();
@@ -83,7 +83,7 @@ function App() {
   const fetchMovieDetails = async (movieId) => {
     try {
       // * Request movie details from the backend
-      const response = await fetch(`${BASE_URL}/search_movie`);
+      const response = await fetch(`${BASE_URL}/search_movie?query=${encodeURIComponent(query)}`);
 
       const data = await response.json();  // Convert JSON to JS object
 
