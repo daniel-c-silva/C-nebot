@@ -1,4 +1,4 @@
-# C-neBot: Your AI-Powered Movie Assistant // aka gpt for movies
+# C-neBot: Your AI-Powered Movie Assistant 
 
 C-neBot isn’t just another movie search app — it works as an assistant for you to choose what to watch quicker.  
 Search, explore and chat.
