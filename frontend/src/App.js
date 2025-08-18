@@ -48,7 +48,7 @@ function App() {
 
   // ! BASE URL for backend requests
   // ? In development, this can be localhost, but in Vercel production, it should be the deployed API endpoint
-  const BASE_URL = "/api";
+  const BASE_URL = "https://c-nebot.onrender.com";
  // If empty, will call relative paths
 
   // * ================================
