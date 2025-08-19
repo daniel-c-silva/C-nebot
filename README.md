@@ -18,7 +18,8 @@ It holds together **React on the frontend** and a **Flask backend**, then superc
 - **AI Chat** → Ask anything about a movie, get smart responses (recommendations, trivia, vibes)  
 
 
-![A GIF of the real-time C-nebot dashboard in action](https://github.com/daniel-c-silva/C-nebot/blob/main/assets/intro.gif?raw=true)
+![A GIF of the real-time C-nebot dashboard in action](https://github.com/daniel-c-silva/C-nebot/blob/main/assets/Intro.gif?raw=true)
+
 ---
 
 ## Tech Stack
