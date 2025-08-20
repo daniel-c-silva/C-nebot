@@ -263,21 +263,24 @@ return (
     {!selectedMovie ? (
       <ul style={{ listStyle: "none", padding: 0 }}>
         {results.map((movie) => (
-          <li
-            key={movie.id}
-            onClick={() => fetchMovieDetails(movie.id)}
-            style={{
-              cursor: "pointer",
-              marginBottom: "20px",
-              padding: "20px",
-              background: "linear-gradient(145deg, #121125, #1b1b36)",
-              borderRadius: "20px",
-              boxShadow: "0 0 10px rgba(127,90,240,0.2)",
-              display: "flex",
-              alignItems: "center",
-              gap: "20px",
-              transition: "all 0.3s",
-            }}
+         <li
+           key={movie.id}
+           onClick={() => fetchMovieDetails(movie.id)}
+           style={{
+           cursor: "pointer",
+           marginBottom: "20px",
+           padding: "20px",
+           background: "linear-gradient(145deg, #121125, #1b1b36)",
+           borderRadius: "20px",
+           boxShadow: "0 0 10px rgba(127,90,240,0.2)",
+           display: "flex",
+           alignItems: "center",
+           justifyContent: "center",   // 🔑 centers poster + text
+           gap: "20px",
+           transition: "all 0.3s",
+           maxWidth: "500px",          // keeps list items from stretching too wide
+           marginInline: "auto",       // 🔑 centers the whole card horizontally
+  }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.03)";
               e.currentTarget.style.boxShadow = "0 0 14px #7f5af0";
