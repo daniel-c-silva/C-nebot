@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 # Create a .env file with your API keys
 TMDB_API_KEY="your_tmdb_api_key"
-OPENAI_API_KEY="your_openai_api_key"
+OPENAI_API_KEY="your_openai_api_key" // might change to mistral
 
 # Run the Flask server
 python main.py      # Windows/Linux
